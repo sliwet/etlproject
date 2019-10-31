@@ -1,0 +1,29 @@
+stores as s
+-
+sn int PK
+stype VARCHAR(1)
+ssize int
+
+train as t
+-
+sn int PK FK >- s.sn
+dept int PK
+wdate VARCHAR(10) PK
+wsales float
+isholiday boolean
+
+features as f
+-
+sn int PK FK >- s.sn
+wdate VARCHAR(10) PK
+tempr float
+fuel float
+md1 float
+md2 float
+md3 float
+md4 float
+md5 float
+cpi float
+uir float
+isholiday boolean
+
