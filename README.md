@@ -7,7 +7,7 @@ Group Members: Amgad Nassif, Daewon Kwon, Gabriella Geron, Taimoor Arshad
 3. [Selection of Database](#selection-of-database)
 4. [ERD](#erd)
 5. [Loading into PostgresSQL](#loading-into-postgressql)
-6. [Analysis](#analysis)
+6. [Analysis Examples](#analysis-examples)
 
 ***
 
@@ -137,6 +137,13 @@ CREATE TABLE features (
 
 ***
 
-## Analysis
+## Analysis Examples
+
+### First Example: Impact of Holiday on Sales
+
+Below figure shows impact of holiday on store 1 and department 1. Full analysis was not performed becuase that is not the purpose of this project.
+
+![holiday.png](holiday.png)
+
 
 [Back to top](#etl-project)
