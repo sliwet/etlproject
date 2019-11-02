@@ -1,57 +1,58 @@
-# Guidelines for ETL Project
+# Project 2: ETL Project
 
-This document contains guidelines, requirements, and suggestions for Project 1.
+## Selection of Datasets
 
-## Team Effort
+Source: [Kaggle - Store Sales Forecasting competition by Walmart](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting/data)
 
-Due to the short timeline, teamwork will be crucial to the success of this project! Work closely with your team through all phases of the project to ensure that there are no surprises at the end of the week.
+## Description of Datasets
 
-Working in a group enables you to tackle more difficult problems than you'd be able to working alone. In other words, working in a group allows you to **work smart** and **dream big**. Take advantage of it!
+* stores.csv - this file contains information of 45 stores including the store number, type and size
+* train.csv - this file contains the following information: store number, department, week date, weekly sales, and information whether the week is special holiday week.
+* features.csv
 
-## Project Proposal
+The following two files are not used becasue these are for competition submission specific files
 
-Before you start writing any code, remember that you only have one week to complete this project. View this project as a typical assignment from work. Imagine a bunch of data came in and you and your team are tasked with migrating it to a production data base.
+* test.csv
+* sampleSubmission.csv
 
-Take advantage of your Instructor and TA support during office hours and class project work time. They are a valuable resource and can help you stay on track.
+## Functionality
 
-## Finding Data
+1. [Input Data Format](#input-data-format)
+2. [ColorMap](#colorMap)
+3. [Line Plot](#line-plot)
 
-Your project must use 2 or more sources of data. We recommend the following sites to use as sources of data:
+## Input Data Format
 
-* [data.world](https://data.world/)
+* First row must contain x coordinates whether it is ascending or descending
+* First column must contain y coordinates whether it is ascending or descending
+* Each data point will show up as one pixel
 
-* [Kaggle](https://www.kaggle.com/)
+![Resources/datafileformat.png](Resources/datafileformat.png)
 
-You can also use APIs or data scraped from the web. However, get approval from your instructor first. Again, there is only a week to complete this!
+[Back to top](#dkcolormap)
 
-## Data Cleanup & Analysis
+## ColorMap
 
-Once you have identified your datasets, perform ETL on the data. Make sure to plan and document the following:
+1. Press "Browse Datafile" and select the file to plot
+2. Press and hold left mouse button and drag to zoom
+3. Click left mouse button on outside of plotting area to unzoom
 
-* The sources of data that you will extract from.
+![Resources/browse.png](Resources/browse.png)
 
-* The type of transformation needed for this data (cleaning, joining, filtering, aggregating, etc).
+![Resources/colormap.png](Resources/colormap.png)
 
-* The type of final production database to load the data into (relational or non-relational).
+![Resources/zoomed.png](Resources/zoomed.png)
 
-* The final tables or collections that will be used in the production database.
+[Back to top](#dkcolormap)
 
-You will be required to submit a final technical report with the above information and steps required to reproduce your ETL process.
+## Line Plot
 
-## Project Report
+* Press left mouse button on where you want to inspect in detail
+  * Coordinate information will show up on the bottom
+  * Press "Plot column data at selected X" to plot Z vs Y graph at the selected location
+  * Press "Plot row data at selected Y" to plot Z vs X graph at the selected location
 
-At the end of the week, your team will submit a Final Report that describes the following:
+![Resources/lineplot.png](Resources/lineplot.png)
 
-* **E**xtract: your original data sources and how the data was formatted (CSV, JSON, pgAdmin 4, etc).
+[Back to top](#dkcolormap)
 
-* **T**ransform: what data cleaning or transformation was required.
-
-* **L**oad: the final database, tables/collections, and why this was chosen.
-
-Please upload the report to Github and submit a link to Bootcampspot.
-
-- - -
-
-### Copyright
-
-Coding Boot Camp © 2019. All Rights Reserved.
