@@ -1,8 +1,23 @@
 # Project 2: ETL Project
 
+Group Members: Amgad Nassif, Daewon Kwon, Gabriella Geron, Taimoor Arshad
+
+1. [Selection of Datasets](#selection-of-datasets)
+2. [Description of Datasets](#description-of-datasets)
+3. [Selection of Database](#selection-of-database)
+4. [ERD](#erd)
+5. [Loading into PostgresSQL](#loading-into-postgressql)
+6. [Analysis](#analysis)
+
+***
+
 ## Selection of Datasets
 
 Source: [Kaggle - Store Sales Forecasting competition by Walmart](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting/data)
+
+[Back to top](#project-2:-etl-project)
+
+***
 
 ## Description of Datasets
 
@@ -15,44 +30,113 @@ The following two files are not used becasue these are for competition submissio
 * test.csv
 * sampleSubmission.csv
 
-## Functionality
+[Back to top](#project-2:-etl-project)
 
-1. [Input Data Format](#input-data-format)
-2. [ColorMap](#colorMap)
-3. [Line Plot](#line-plot)
+***
 
-## Input Data Format
+## Selection of Database
 
-* First row must contain x coordinates whether it is ascending or descending
-* First column must contain y coordinates whether it is ascending or descending
-* Each data point will show up as one pixel
+Postgres SQL server will be used for loading the data sets becuase of complexity of intercorrelation between data files.
 
-![Resources/datafileformat.png](Resources/datafileformat.png)
+[Back to top](#project-2:-etl-project)
 
-[Back to top](#dkcolormap)
+***
 
-## ColorMap
+## ERD
 
-1. Press "Browse Datafile" and select the file to plot
-2. Press and hold left mouse button and drag to zoom
-3. Click left mouse button on outside of plotting area to unzoom
+[Quickdatabasediagrams](https://app.quickdatabasediagrams.com/#/d/nFnM9o) has been used to generate ERD
 
-![Resources/browse.png](Resources/browse.png)
+![ERD.png](ERD.png)
 
-![Resources/colormap.png](Resources/colormap.png)
+ERD code
+***
+```text
+stores as s
+-
+sn int PK
+stype VARCHAR(1)
+ssize int
 
-![Resources/zoomed.png](Resources/zoomed.png)
+train as t
+-
+sn int PK FK >- s.sn
+dept int PK
+wdate VARCHAR(10) PK
+wsales float
+isholiday boolean
 
-[Back to top](#dkcolormap)
+features as f
+-
+sn int PK FK >- s.sn
+wdate VARCHAR(10) PK
+tempr float
+fuel float
+md1 float
+md2 float
+md3 float
+md4 float
+md5 float
+cpi float
+uir float
+isholiday boolean
+```
+***
 
-## Line Plot
+[Back to top](#project-2:-etl-project)
 
-* Press left mouse button on where you want to inspect in detail
-  * Coordinate information will show up on the bottom
-  * Press "Plot column data at selected X" to plot Z vs Y graph at the selected location
-  * Press "Plot row data at selected Y" to plot Z vs X graph at the selected location
+***
 
-![Resources/lineplot.png](Resources/lineplot.png)
+## Loading into PostgresSQL
 
-[Back to top](#dkcolormap)
+* Create a database "etlproject"
+* Create tables with the following schema
+***
+```text
+CREATE TABLE stores (
+    sn int  PRIMARY KEY NOT NULL,
+    stype varchar(1) NOT NULL,
+    ssize int NOT NULL
+);
 
+CREATE TABLE train (
+    sn int NOT NULL,
+    dept int NOT NULL,
+    wdate varchar(10) NOT NULL,
+    wsales float NOT NULL,
+    isholiday boolean NOT NULL,
+    
+	FOREIGN KEY (sn) REFERENCES stores(sn),
+	PRIMARY KEY (sn,dept,wdate)
+);
+
+CREATE TABLE features (
+    sn int NOT NULL,
+    wdate varchar(10) NOT NULL,
+    tempr float NOT NULL,
+    fuel float NOT NULL,
+    md1 float,
+    md2 float,
+    md3 float,
+    md4 float,
+    md5 float,
+    cpi float,
+    uir float,
+    isholiday boolean NOT NULL,
+    
+	FOREIGN KEY (sn) REFERENCES stores(sn),
+	PRIMARY KEY (sn,wdate)
+);
+```
+***
+* Load stores.csv file into the database
+* Load train.csv file into the database
+* Load features.csv file into the database
+* Note: Some entries of data are missing. For exmaple, some cpi data are assigned as "NA" instead of having float value. Therefore, extra care is needed while loading the csv file into the database. To revolve this issue, we need to assign "NA" to "NULL Strings" while loading the csv file to database. We needed to treat for all floating items which "NOT NULL" was assigned.
+
+[Back to top](#project-2:-etl-project)
+
+***
+
+## Analysis
+
+[Back to top](#project-2:-etl-project)
