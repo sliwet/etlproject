@@ -1,4 +1,4 @@
-# Project 2: ETL Project
+# ETL Project
 
 Group Members: Amgad Nassif, Daewon Kwon, Gabriella Geron, Taimoor Arshad
 
@@ -15,7 +15,7 @@ Group Members: Amgad Nassif, Daewon Kwon, Gabriella Geron, Taimoor Arshad
 
 Source: [Kaggle - Store Sales Forecasting competition by Walmart](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting/data)
 
-[Back to top](#project-2:-etl-project)
+[Back to top](#etl-project)
 
 ***
 
@@ -30,7 +30,7 @@ The following two files are not used becasue these are for competition submissio
 * test.csv
 * sampleSubmission.csv
 
-[Back to top](#project-2:-etl-project)
+[Back to top](#etl-project)
 
 ***
 
@@ -38,7 +38,7 @@ The following two files are not used becasue these are for competition submissio
 
 Postgres SQL server will be used for loading the data sets becuase of complexity of intercorrelation between data files.
 
-[Back to top](#project-2:-etl-project)
+[Back to top](#etl-project)
 
 ***
 
@@ -82,7 +82,7 @@ isholiday boolean
 ```
 ***
 
-[Back to top](#project-2:-etl-project)
+[Back to top](#etl-project)
 
 ***
 
@@ -133,10 +133,10 @@ CREATE TABLE features (
 * Load features.csv file into the database
 * Note: Some entries of data are missing. For exmaple, some cpi data are assigned as "NA" instead of having float value. Therefore, extra care is needed while loading the csv file into the database. To revolve this issue, we need to assign "NA" to "NULL Strings" while loading the csv file to database. We needed to treat for all floating items which "NOT NULL" was assigned.
 
-[Back to top](#project-2:-etl-project)
+[Back to top](#etl-project)
 
 ***
 
 ## Analysis
 
-[Back to top](#project-2:-etl-project)
+[Back to top](#etl-project)
