@@ -137,9 +137,16 @@ CREATE TABLE features (
 
 ***
 
-## Analysis Examples
+## Data Loading confirmation
 
-### First Example: Impact of Holiday on Sales
+### Loading data from Pandas
+
+![dataloading1.png](dataloading1.png)
+
+![dataloading2.png](dataloading2.png)
+
+
+### Analysis Example: Impact of Holiday on Sales
 
 Below figure shows impact of holiday on store 1 and department 1. Full analysis was not performed becuase that is not the purpose of this project.
 
