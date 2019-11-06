@@ -7,7 +7,7 @@ Group Members: Amgad Nassif, Daewon Kwon, Gabriella Geron, Taimoor Arshad
 3. [Selection of Database](#selection-of-database)
 4. [ERD](#erd)
 5. [Loading into PostgresSQL](#loading-into-postgressql)
-6. [Analysis Examples](#analysis-examples)
+6. [Confirmation of Data Integrity](#confirmation-of-data-integrity)
 
 ***
 
@@ -137,7 +137,7 @@ CREATE TABLE features (
 
 ***
 
-## Data Loading confirmation
+## Confirmation of Data Integrity
 
 ### Loading data from Pandas
 
