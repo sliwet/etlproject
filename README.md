@@ -27,8 +27,8 @@ Source: [Kaggle - Store Sales Forecasting competition by Walmart](https://www.ka
 
 The following two files are not used becasue these are for competition submission specific files
 
-* test.csv
 * sampleSubmission.csv
+* test.csv
 
 [Back to top](#etl-project)
 
